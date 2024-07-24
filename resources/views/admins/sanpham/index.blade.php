@@ -51,10 +51,10 @@
                                     <td>{{ $item->ten_san_pham }}</td> 
                                     <td>{{ $item->danhMuc->ten_danh_muc }}</td>
                                     <td class="d-flex align-items-center">
-                                        <img src="{{ Storage::url($item->danhMuc->hinh_anh) }}" alt="" width="100px" height="100px">
+                                        <img src="{{ Storage::url($item->anh_san_pham) }}" alt="" width="100px" height="100px">
                                     </td>
-                                    <td>{{ $item->gia_san_pham }}</td>
-                                    <td>{{ $item->gia_khuyen_mai }}</td>
+                                    <td>{{ number_format($item->gia_san_pham) }} VNĐ</td>
+                                    <td>{{ number_format(empty($item->gia_khuyen_mai) ? 0 : $item->gia_khuyen_mai) }}  </td>
                                     <td>{{ $item->so_luong }}</td>
                                     <td class="{{ $item->is_type == true ? 'text-success' : 'text-danger'}} ">
                                         {{ $item->is_type == true ? 'Hiển thị' : 'Ẩn'}} 
